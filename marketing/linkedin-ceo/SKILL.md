@@ -7,6 +7,20 @@ description: Create thought leadership content for Michel Lopez using expert per
 
 Create thought leadership content that builds authority and generates property owner leads.
 
+## Property Data Source
+
+**Fetch current property and company information from the VPVR website** for authentic content references.
+
+| Resource | URL | What You Get |
+|----------|-----|--------------|
+| **All Properties** | `https://paraisovacationrentals.com/properties/` | Current portfolio for success stories |
+| **Individual Property** | `https://paraisovacationrentals.com/property/[slug]/` | Property details for case studies |
+| **Company Info** | `https://paraisovacationrentals.com/about/` | Background for authority building |
+
+**For LinkedIn posts**: Reference real properties and experiences to demonstrate expertise authentically.
+
+---
+
 ## Expert Methodologies Incorporated
 
 | Expert | Framework | Application |

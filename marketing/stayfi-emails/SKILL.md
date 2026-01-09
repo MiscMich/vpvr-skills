@@ -9,6 +9,20 @@ Create extremely high-converting, beautiful emails using proven email marketing 
 
 ---
 
+## Property Data Source
+
+**Always fetch current property information from the VPVR website.** Properties, images, and amenities are updated regularly.
+
+| Resource | URL | What You Get |
+|----------|-----|--------------|
+| **All Properties** | `https://paraisovacationrentals.com/properties/` | Current property list with photos |
+| **Individual Property** | `https://paraisovacationrentals.com/property/[slug]/` | Property photos, amenities, check-in details |
+| **Logo Assets** | `/wp-content/uploads/2026/01/` | Current logo files (see Quick Reference) |
+
+**Before creating emails**: Fetch the specific property page to get current photos, amenities, and details for personalized content.
+
+---
+
 ## CRITICAL: Read These Skills First
 
 Before creating any email, Claude MUST read:
