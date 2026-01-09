@@ -13,11 +13,183 @@ Apply consistent VPVR brand identity across all channels and formats.
 
 | Resource | URL | What You Get |
 |----------|-----|--------------|
-| **Logo SVG** | `https://paraisovacationrentals.com/wp-content/uploads/2024/03/villa-paraiso-logo.svg` | Current logo |
+| **Logo Library** | `/wp-content/uploads/2026/01/` | Current PNG logos (see below) |
 | **All Properties** | `https://paraisovacationrentals.com/properties/` | Current property list with photos |
 | **Individual Property** | `https://paraisovacationrentals.com/property/[slug]/` | Property photos for branded materials |
 
 **For branded materials**: Fetch property pages to get current photos and ensure consistency with live website.
+
+---
+
+## Logo Library (Jan 2026)
+
+**Base URL:** `https://paraisovacationrentals.com/wp-content/uploads/2026/01/`
+
+### Complete Logo Inventory
+
+#### Horizontal Wordmark (Palm tree + "VILLA PARAISO VACATION RENTALS")
+Wide format, aspect ratio ~6:1. **Recommended for most brand applications.**
+
+| File | Dimensions | Logo Color | Use On | Resolution |
+|------|------------|------------|--------|------------|
+| `vpvr-logo-cream@2x.png` | 3384×570 | Cream/Off-white | Dark backgrounds (Ocean Blue, Teal, dark photos) | Retina ✅ |
+| `vpvr-logo-cream.png` | 1692×285 | Cream/Off-white | Dark backgrounds | Standard |
+| `vpvr-logo-teal@2x.png` | 3384×570 | Teal | Light backgrounds (White, Cream, light photos) | Retina ✅ |
+| `vpvr-logo-teal.png` | 1692×285 | Teal | Light backgrounds | Standard |
+
+#### Icon Only (Palm tree symbol)
+Square format, 1:1 ratio. **Use when space is limited or brand is already established.**
+
+| File | Dimensions | Logo Color | Use On | Resolution |
+|------|------------|------------|--------|------------|
+| `vpvr-icon-cream@2x.png` | 570×570 | Cream/Off-white | Dark backgrounds | Retina ✅ |
+| `vpvr-icon-cream.png` | 285×285 | Cream/Off-white | Dark backgrounds | Standard |
+| `vpvr-icon-teal@2x.png` | 570×570 | Teal | Light backgrounds | Retina ✅ |
+| `vpvr-icon-teal.png` | 285×285 | Teal | Light backgrounds | Standard |
+
+---
+
+### Logo Selection Guide
+
+**Step 1: What's your background color?**
+
+| Background | Logo Color to Use |
+|------------|-------------------|
+| White `#FFFFFF` | **Teal** logos |
+| Cream `#EEE5C7` | **Teal** logos |
+| Light gray `#F8F6F3` | **Teal** logos |
+| Light photos/images | **Teal** logos |
+| Ocean Blue `#2E6E7A` | **Cream** logos |
+| Teal `#48A1AA` | **Cream** logos |
+| Dark photos/images | **Cream** logos |
+| Black `#000000` | **Cream** logos |
+
+**Step 2: What format do you need?**
+
+| Situation | Format | Why |
+|-----------|--------|-----|
+| Header/hero with space | Horizontal wordmark | Shows full brand name, establishes identity |
+| Footer/secondary placement | Icon only | Clean, recognizable, doesn't compete |
+| Social profile picture | Icon only | Square format required |
+| Favicon/app icon | Icon only | Small sizes need simplicity |
+| Document letterhead | Horizontal wordmark | Professional, complete branding |
+| Video watermark | Icon only | Non-intrusive, always visible |
+| Email signature | Icon only | Compact, loads fast |
+| Presentation title slide | Horizontal wordmark | Establishes brand upfront |
+| Presentation content slides | Icon only | Subtle brand presence |
+
+**Step 3: What resolution?**
+
+| Device/Use | Resolution | File suffix |
+|------------|------------|-------------|
+| Print, Retina displays, high-DPI | @2x | `vpvr-logo-cream@2x.png` |
+| Standard web, email, older screens | Standard | `vpvr-logo-cream.png` |
+
+**When in doubt, use @2x** — it scales down cleanly and ensures crisp display everywhere.
+
+---
+
+### Logo Usage by Channel (Complete Reference)
+
+#### Email
+| Placement | Logo | File | Size | Background |
+|-----------|------|------|------|------------|
+| Header (dark bg) | Horizontal wordmark | `vpvr-logo-cream@2x.png` | 280×47px | Ocean Blue `#2E6E7A` |
+| Header (light bg) | Horizontal wordmark | `vpvr-logo-teal@2x.png` | 280×47px | White/Cream |
+| Footer (dark bg) | Icon | `vpvr-icon-cream@2x.png` | 70×70px | Ocean Blue `#2E6E7A` |
+| Footer (light bg) | Icon | `vpvr-icon-teal@2x.png` | 70×70px | White/Cream |
+| CTA section (teal bg) | Icon | `vpvr-icon-cream@2x.png` | 60×60px | Teal `#48A1AA` |
+
+#### Documents (Word, PDF)
+| Placement | Logo | File | Size |
+|-----------|------|------|------|
+| Header (white page) | Horizontal wordmark | `vpvr-logo-teal@2x.png` | 200×34px |
+| Footer (white page) | Icon | `vpvr-icon-teal@2x.png` | 50×50px |
+| Cover page (dark) | Horizontal wordmark | `vpvr-logo-cream@2x.png` | 300×50px |
+| Watermark | Icon | `vpvr-icon-teal@2x.png` | 150×150px @ 10% opacity |
+
+#### Presentations (PowerPoint, Google Slides)
+| Placement | Logo | File | Size |
+|-----------|------|------|------|
+| Title slide (white bg) | Horizontal wordmark | `vpvr-logo-teal@2x.png` | 300×50px |
+| Title slide (teal bg) | Horizontal wordmark | `vpvr-logo-cream@2x.png` | 300×50px |
+| Content slides (corner) | Icon | `vpvr-icon-teal@2x.png` | 40×40px |
+| Thank you slide | Icon | `vpvr-icon-cream@2x.png` | 100×100px |
+
+#### Spreadsheets (Excel, Google Sheets)
+| Placement | Logo | File | Size |
+|-----------|------|------|------|
+| Header area | Icon | `vpvr-icon-teal@2x.png` | 60×60px |
+| Report cover tab | Horizontal wordmark | `vpvr-logo-teal@2x.png` | 200×34px |
+
+#### Social Media
+| Platform | Logo | File | Notes |
+|----------|------|------|-------|
+| Profile picture (all) | Icon | `vpvr-icon-teal@2x.png` | Crop to platform specs |
+| Facebook cover | Horizontal wordmark | `vpvr-logo-cream@2x.png` | On dark photo background |
+| Instagram story | Icon | `vpvr-icon-cream@2x.png` | Corner watermark |
+| LinkedIn banner | Horizontal wordmark | `vpvr-logo-teal@2x.png` | On light background |
+
+#### Video
+| Placement | Logo | File | Size |
+|-----------|------|------|------|
+| Opening title | Horizontal wordmark | `vpvr-logo-cream@2x.png` | 400×67px |
+| Persistent watermark | Icon | `vpvr-icon-cream@2x.png` | 60×60px @ 70% opacity |
+| End card | Horizontal wordmark | `vpvr-logo-cream@2x.png` | 350×59px |
+
+#### Website
+| Placement | Logo | File | Notes |
+|----------|------|------|-------|
+| Navigation (light) | Horizontal wordmark | `vpvr-logo-teal@2x.png` | Standard header |
+| Navigation (dark/scrolled) | Horizontal wordmark | `vpvr-logo-cream@2x.png` | Sticky header on scroll |
+| Footer | Icon | `vpvr-icon-cream@2x.png` | Dark footer section |
+| Favicon | Icon | `vpvr-icon-teal@2x.png` | 32×32px, 16×16px |
+
+---
+
+### Logo Sizing Rules
+
+#### Horizontal Wordmark (6:1 ratio)
+Always maintain the 6:1 aspect ratio when resizing.
+
+| Width | Height | Common Use |
+|-------|--------|------------|
+| 140px | 24px | Minimum size (small headers) |
+| 200px | 34px | Document headers |
+| 250px | 42px | Presentation slides |
+| 280px | 47px | Email headers |
+| 300px | 50px | Title slides, covers |
+| 400px | 67px | Video titles, hero sections |
+
+#### Icon (1:1 ratio)
+Always keep square dimensions.
+
+| Size | Common Use |
+|------|------------|
+| 32px | Favicon |
+| 40px | Slide corner |
+| 50px | Document footer |
+| 60px | Spreadsheet, video watermark |
+| 70px | Email footer |
+| 100px | Thank you slides, large placements |
+| 150px | Watermarks (with transparency) |
+
+#### Minimum Clear Space
+- **Wordmark**: Padding equal to the height of the palm tree icon on all sides
+- **Icon**: Padding equal to 25% of the icon width on all sides
+
+---
+
+### Legacy Logos (Deprecated)
+
+**DO NOT USE these older files:**
+
+| Location | Files | Problem |
+|----------|-------|---------|
+| `/2024/03/` | `villa-paraiso-logo.svg`, `villa-paraiso-logo-white.svg` | SVG stripped by email clients |
+| `/2026/01/` | `VillaParaisoLogo-Cream.jpg` | Stacked format, displays too small |
+| `/2026/01/` | `VillaParaisoLogo-Cream-Transparent.png` | Stacked format, displays too small |
+| `/2026/01/` | `VillaParaisoLogo-Blue-Transparent.png` | Stacked format, displays too small |
 
 ---
 
@@ -39,10 +211,13 @@ Apply consistent VPVR brand identity across all channels and formats.
 |---------|-------|
 | Primary Color (Teal) | `#48A1AA` / RGB(72, 161, 170) |
 | Secondary (Cream) | `#EEE5C7` / RGB(238, 229, 199) |
+| Ocean Blue | `#2E6E7A` / RGB(46, 110, 122) |
 | Web/Email Font | **Montserrat** (fallback: Arial) |
 | Heading Font | **Cormorant** (fallback: Georgia) |
 | Print Font | Helvetica Neue (fallback: Arial) |
-| Logo Size | **Always square** (e.g., 80×80px) |
+| Logo folder | `/wp-content/uploads/2026/01/` |
+| Logo (dark bg) | `vpvr-logo-cream@2x.png` or `vpvr-icon-cream@2x.png` |
+| Logo (light bg) | `vpvr-logo-teal@2x.png` or `vpvr-icon-teal@2x.png` |
 
 ---
 
@@ -372,7 +547,7 @@ URL: https://paraisovacationrentals.com/property/blue-pearl-waterfront-oasis-w-p
 
 ### Header Block
 ```
-[LOGO - centered or left-aligned, 60-100px square]
+[LOGO - use vpvr-logo-teal@2x.png at ~200×34px for documents]
 Villa Paraiso Vacation Rentals
 A Partnership in Premier Hospitality.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -381,6 +556,7 @@ A Partnership in Premier Hospitality.
 ### Footer Block
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[ICON - use vpvr-icon-teal@2x.png at 50×50px, optional]
 Villa Paraiso Vacation Rentals LLC
 13359 SW 59th Terr, Miami, Florida 33183
 1154 Camino Del Vientos, Marathon, FL 33050
@@ -429,23 +605,30 @@ paraisovacationrentals.com
 
 ```html
 <!-- Email-safe inline CSS -->
-<body style="font-family: 'Montserrat', Arial, sans-serif; margin: 0; padding: 0; background-color: #ffffff;">
-  <table style="width: 100%; max-width: 600px; margin: 0 auto;">
+<body style="font-family: 'Montserrat', Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f6f3;">
+  <table style="width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+    <!-- Header with horizontal wordmark -->
     <tr>
-      <td style="background-color: #48A1AA; padding: 20px; text-align: center;">
-        <img src="https://paraisovacationrentals.com/wp-content/uploads/2024/03/villa-paraiso-logo.svg"
-             alt="Villa Paraiso" style="width: 80px; height: 80px;">
+      <td style="background-color: #2E6E7A; padding: 45px 40px; text-align: center;">
+        <img src="https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-logo-cream@2x.png"
+             alt="Villa Paraiso Vacation Rentals" width="280" height="47" 
+             style="display: block; margin: 0 auto; width: 280px; height: 47px;">
       </td>
     </tr>
+    <!-- Content -->
     <tr>
-      <td style="padding: 30px; color: #333333; font-size: 16px; line-height: 1.6;">
+      <td style="padding: 40px; color: #333333; font-size: 16px; line-height: 1.6;">
         <!-- Content -->
       </td>
     </tr>
+    <!-- Footer with icon -->
     <tr>
-      <td style="background-color: #F1ECEC; padding: 20px; text-align: center; font-size: 12px; color: #333333;">
-        Villa Paraiso Vacation Rentals<br>
-        (786) 348-1396 | info@paraisovacationrentals.com
+      <td style="background-color: #2E6E7A; padding: 40px; text-align: center;">
+        <img src="https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-icon-cream@2x.png"
+             alt="Villa Paraiso" width="70" height="70" 
+             style="display: block; margin: 0 auto 20px auto; width: 70px; height: 70px;">
+        <p style="color: #ffffff; font-size: 16px; margin: 0 0 5px 0;">Villa Paraiso Vacation Rentals</p>
+        <p style="color: #EEE5C7; font-size: 12px; margin: 0;">(786) 348-1396 | info@paraisovacationrentals.com</p>
       </td>
     </tr>
   </table>
@@ -455,13 +638,24 @@ paraisovacationrentals.com
 ### docx-js Logo (Complete)
 
 ```javascript
-const logoBuffer = fs.readFileSync('./assets/VillaParaisoLogoBlueTransparent_2.png');
+// Download logo first: curl -O https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-logo-teal@2x.png
+const logoBuffer = fs.readFileSync('./assets/vpvr-logo-teal@2x.png');
 
 new ImageRun({
-  type: "jpg",  // All VPVR logos are JPEG despite extension
+  type: "png",
   data: logoBuffer,
-  transformation: { width: 80, height: 80 },  // MUST be equal (square)
+  transformation: { width: 200, height: 34 },  // Maintains 6:1 aspect ratio
   altText: { title: "VPVR Logo", description: "Villa Paraiso Vacation Rentals", name: "Logo" }
+})
+
+// For icon-only usage:
+const iconBuffer = fs.readFileSync('./assets/vpvr-icon-teal@2x.png');
+
+new ImageRun({
+  type: "png",
+  data: iconBuffer,
+  transformation: { width: 50, height: 50 },  // Square icon
+  altText: { title: "VPVR Icon", description: "Villa Paraiso", name: "Icon" }
 })
 ```
 
@@ -484,19 +678,21 @@ styles: {
 ### pptx (PptxGenJS)
 
 ```javascript
-// Slide master colors
+// Logo paths - download from: https://paraisovacationrentals.com/wp-content/uploads/2026/01/
+const logoPath = './assets/vpvr-logo-teal@2x.png';  // Horizontal wordmark
+const iconPath = './assets/vpvr-icon-teal@2x.png';  // Icon only
+
+// Slide master with horizontal wordmark
 pptx.defineSlideMaster({
   title: 'VPVR_MASTER',
   background: { color: 'FFFFFF' },
   objects: [
-    { image: { x: 0.3, y: 0.2, w: 0.8, h: 0.8, path: logoPath } },  // Square!
-    { text: { text: 'Villa Paraiso Vacation Rentals', options: {
-      x: 1.2, y: 0.35, fontSize: 14, bold: true, color: '48A1AA', fontFace: 'Cormorant' } } }
+    { image: { x: 0.3, y: 0.2, w: 2.5, h: 0.42, path: logoPath } },  // 6:1 ratio
   ]
 });
 
-// Title slide
-slide.addImage({ path: logoPath, x: 4, y: 1.5, w: 1.5, h: 1.5 });  // Centered, square
+// Title slide with icon
+slide.addImage({ path: iconPath, x: 4.25, y: 1.5, w: 1.5, h: 1.5 });  // Centered, square
 slide.addText('Presentation Title', { x: 1, y: 3.5, w: 8, fontSize: 36, bold: true, color: '48A1AA', fontFace: 'Cormorant' });
 ```
 
@@ -505,14 +701,21 @@ slide.addText('Presentation Title', { x: 1, y: 3.5, w: 8, fontSize: 36, bold: tr
 ```python
 VPVR_TEAL = RGBColor(72, 161, 170)      # #48A1AA
 VPVR_CREAM = RGBColor(238, 229, 199)    # #EEE5C7
+VPVR_OCEAN_BLUE = RGBColor(46, 110, 122) # #2E6E7A
 VPVR_OFF_WHITE = RGBColor(241, 236, 236) # #F1ECEC
 VPVR_FONT = "Montserrat"
 VPVR_HEADING_FONT = "Cormorant"
-VPVR_LOGO_PATH = "./assets/VillaParaisoLogoBlueTransparent_2.png"
 
-# Logo - always use equal width/height (square)
+# Logo paths - download from: https://paraisovacationrentals.com/wp-content/uploads/2026/01/
+VPVR_LOGO_PATH = "./assets/vpvr-logo-teal@2x.png"  # Horizontal wordmark
+VPVR_ICON_PATH = "./assets/vpvr-icon-teal@2x.png"  # Icon only
+
+# Horizontal wordmark (maintains 6:1 ratio)
 from docx.shared import Inches
-doc.add_picture(VPVR_LOGO_PATH, width=Inches(1), height=Inches(1))
+doc.add_picture(VPVR_LOGO_PATH, width=Inches(2.5), height=Inches(0.42))
+
+# Icon only (square)
+doc.add_picture(VPVR_ICON_PATH, width=Inches(0.75), height=Inches(0.75))
 ```
 
 ### xlsx (ExcelJS)
@@ -548,12 +751,12 @@ workbook.eachSheet(ws => {
   });
 });
 
-// Add logo (top-left, square)
-const logoPath = './assets/VillaParaisoLogoBlueTransparent_2.png';
-const logoId = workbook.addImage({ filename: logoPath, extension: 'jpeg' });
+// Add logo - download from: https://paraisovacationrentals.com/wp-content/uploads/2026/01/
+const logoPath = './assets/vpvr-icon-teal@2x.png';  // Icon for spreadsheets
+const logoId = workbook.addImage({ filename: logoPath, extension: 'png' });
 sheet.addImage(logoId, {
   tl: { col: 0, row: 0 },
-  ext: { width: 80, height: 80 }  // MUST be equal (square)
+  ext: { width: 60, height: 60 }  // Square icon
 });
 
 // Teal borders for data range
@@ -592,10 +795,10 @@ for cell in ws[1]:
     cell.fill = VPVR_TEAL_FILL
     cell.alignment = Alignment(horizontal='center', vertical='center')
 
-# Add logo (square dimensions)
-logo = Image('./assets/VillaParaisoLogoBlueTransparent_2.png')
-logo.width = 80
-logo.height = 80  # MUST equal width (square)
+# Add logo - download from: https://paraisovacationrentals.com/wp-content/uploads/2026/01/
+logo = Image('./assets/vpvr-icon-teal@2x.png')  # Icon for spreadsheets
+logo.width = 60
+logo.height = 60  # Square icon
 ws.add_image(logo, 'A1')
 ```
 
@@ -637,9 +840,11 @@ When using Canva, apply these settings:
 | Primary Color | #48A1AA |
 | Secondary Color | #EEE5C7 |
 | Accent Color | #F1ECEC |
+| Ocean Blue | #2E6E7A |
 | Body Font | Montserrat |
 | Heading Font | Cormorant |
-| Logo | Upload square versions only |
+| Logo (wordmark) | `vpvr-logo-cream@2x.png` or `vpvr-logo-teal@2x.png` |
+| Logo (icon) | `vpvr-icon-cream@2x.png` or `vpvr-icon-teal@2x.png` |
 
 ---
 
@@ -647,12 +852,16 @@ When using Canva, apply these settings:
 
 | Don't | Why |
 |-------|-----|
-| ❌ Stretch or distort logo | Always maintain 1:1 square ratio |
+| ❌ Use stacked logo format | Too small at appropriate sizes, use horizontal wordmark |
+| ❌ Use SVG logos in emails | Stripped by Outlook/Gmail, use PNG |
+| ❌ Use legacy logos from `/2024/03/` | Outdated, use `/2026/01/` versions |
+| ❌ Stretch or distort logo | Maintain aspect ratios (6:1 for wordmark, 1:1 for icon) |
 | ❌ Use low-contrast text | Fails accessibility standards |
 | ❌ Mix font styles randomly | Undermines brand consistency |
 | ❌ Use non-brand colors | Creates confusion with brand identity |
 | ❌ Place logo on busy backgrounds | Reduces visibility and recognition |
 | ❌ Add effects to logo | Shadows, glows, etc. degrade quality |
+| ❌ Use black (#1a1a1a) for footers | Use Ocean Blue #2E6E7A instead |
 
 ---
 
@@ -667,3 +876,10 @@ This brand guide is used by:
 - **owner-comms**: Homeowner communication styling
 - **linkedin-ceo**: Thought leadership content
 - **vpvr-seo-aeo**: SEO optimization with brand consistency
+
+---
+
+## Changelog
+
+- **v2.1** (Jan 2026): Comprehensive logo documentation overhaul. Added Logo Selection Guide with background color matching. Added complete usage tables for Email, Documents, Presentations, Spreadsheets, Social Media, Video, and Website. Added sizing rules and minimum clear space guidelines.
+- **v2.0** (Jan 2026): Complete logo library update. Added 8 logo variants (horizontal wordmark + icon, cream/teal, @1x/@2x). Updated all code examples for docx, pptx, xlsx. Deprecated stacked logos and SVG format. Added Ocean Blue #2E6E7A to palette. Updated email template with proper header/footer logo usage.

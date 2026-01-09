@@ -1,320 +1,341 @@
 ---
 name: stayfi-emails
-description: Create extremely high-converting, beautiful HTML email templates for StayFi guest communication using expert methodologies (Joanna Wiebe, Chase Dimond, Val Geisler). Includes complete guest journey sequences from pre-arrival through win-back. Features mobile-first luxury design, conversion-optimized subject lines, and professional inline CSS templates ready for StayFi upload.
+description: Create extremely high-converting, beautiful HTML email templates for StayFi guest communication using expert methodologies (Joanna Wiebe, Chase Dimond, Val Geisler, Litmus, Email on Acid). Includes complete guest journey sequences from pre-arrival through win-back. Features luxury editorial design with distinctive typography, and professional inline CSS templates ready for StayFi upload. All property data, images, and links are dynamically sourced and validated before delivery.
 ---
 
 # VPVR StayFi Email Templates
 
-Create extremely high-converting, beautiful emails using proven email marketing expert methodologies.
-
-## Property Data Source
-
-**Always fetch current property information from the VPVR website.** Properties are added and removed regularly.
-
-| Resource | URL | What You Get |
-|----------|-----|--------------|
-| **All Properties** | `https://paraisovacationrentals.com/properties/` | Current property list with photos |
-| **Individual Property** | `https://paraisovacationrentals.com/property/[slug]/` | Photos, amenities, check-in details |
-| **Property Images** | Fetch from individual property pages | Hero images for email headers |
-
-**Before creating emails**: Fetch the property page to get current photos (for image URLs), accurate amenities, and property-specific details.
+Create extremely high-converting, beautiful emails using proven email marketing expert methodologies combined with luxury editorial design principles. **All content is dynamically sourced from the live VPVR website.**
 
 ---
 
-## Expert Methodologies Incorporated
+## CRITICAL: Read These Skills First
+
+Before creating any email, Claude MUST read:
+
+1. **Frontend Design Skill** (`/mnt/skills/public/frontend-design/SKILL.md`)
+   - Provides bold aesthetic direction and design thinking
+   - Typography, color, motion, and spatial composition principles
+   - Ensures emails avoid generic "AI slop" aesthetics
+
+2. **VPVR Brand Skill** (`/mnt/skills/user/vpvr-brand/SKILL.md`)
+   - Brand colors, typography, logo specifications
+   - Voice: "Four Seasons of vacation rentals" — luxury without pretension
+
+**Design Philosophy**: Every VPVR email should feel like a luxury editorial piece — magazine-quality design with intentional typography, generous whitespace, and memorable visual moments.
+
+---
+
+## Quick Reference
+
+| Specification | Value |
+|---------------|-------|
+| **Max width** | 600px |
+| **Body font** | Montserrat, 16px minimum |
+| **Heading font** | Cormorant (Georgia fallback) |
+| **CTA button** | 44px minimum height |
+| **Logo folder** | `/wp-content/uploads/2026/01/` |
+| **Dark bg → Cream logos** | `vpvr-logo-cream@2x.png` (header 280×47), `vpvr-icon-cream@2x.png` (footer 70×70) |
+| **Light bg → Teal logos** | `vpvr-logo-teal@2x.png` (header 280×47), `vpvr-icon-teal@2x.png` (footer 70×70) |
+| **Primary color** | `#48A1AA` (Teal) |
+| **Accent** | `#EEE5C7` (Cream) |
+| **Ocean Blue** | `#2E6E7A` (headers, footers) |
+| **Header/Footer bg** | `#2E6E7A` solid (never black, no gradients) |
+
+---
+
+## MANDATORY: Dynamic Content Sourcing
+
+### Step 1: Fetch Property Data
+
+**Claude MUST fetch current property information before creating any email.** Never use assumed data.
+
+```
+WORKFLOW:
+1. web_fetch https://paraisovacationrentals.com/properties/ to get current property list
+2. Identify the target property from the listing
+3. web_fetch the individual property page: https://paraisovacationrentals.com/property/[slug]/
+4. Extract hero image URLs and property details from the page
+5. Use this live data in the email
+```
+
+### Step 2: Extract Images
+
+From each property page, extract:
+- **Hero image**: The main large photo (usually first in gallery)
+- **Gallery images**: Additional photos for multi-image layouts
+- **Property details**: Bedrooms, bathrooms, amenities, location
+
+**Image URLs will be in format**: `https://paraisovacationrentals.com/wp-content/uploads/...`
+
+These WordPress-hosted images are reliable for email hotlinking.
+
+### Step 3: Validate Before Delivery
+
+Use `web_fetch` to confirm:
+- [ ] All image URLs load correctly
+- [ ] Property page is live
+- [ ] CTA destination links work
+
+### If Property Data Cannot Be Found
+
+If a property page fails to load:
+1. **Flag to user**: "I couldn't load [property name]. Please verify the property URL or upload photos directly."
+2. Provide partial email with `[UPLOAD PROPERTY IMAGE]` placeholders
+3. **Never invent or assume property details**
+
+---
+
+## Current VPVR Properties
+
+Fetch fresh data, but here are the known property slugs for reference:
+
+| Property Name | URL Slug | Location |
+|---------------|----------|----------|
+| Blue Pearl | `blue-pearl` | Key Colony Beach |
+| Ocean Muse | `ocean-muse` | Marathon |
+| Isla Sol | `isla-sol` | Marathon |
+| Isla Luna | `isla-luna` | Marathon |
+| Aqua Verde | `aqua-verde` | Key Colony Beach |
+| Casa Coral | `casa-coral` | Key Colony Beach |
+
+**Always fetch the properties page to get the current list** — properties are added and removed.
+
+---
+
+## Expert Methodologies
 
 | Expert | Framework | Application |
 |--------|-----------|-------------|
-| **Joanna Wiebe** (Copyhackers) | Voice of Customer (VOC) | Use guest language in subject lines and body |
-| **Chase Dimond** | Retention Flow Optimization | Behavior-triggered sequences, segmentation |
-| **Val Geisler** | Fix My Churn | Onboarding sequences that build anticipation |
-| **Alex Cattoni** | Subject Line Formulas | 8 proven formulas that drive opens |
-| **Campaign Monitor** | The Four U's | Useful, Urgent, Ultra-specific, Unique |
+| **Joanna Wiebe** (Copyhackers) | Voice of Customer | Use guest language in subject lines |
+| **Chase Dimond** | Retention Flow Optimization | Behavior-triggered sequences |
+| **Val Geisler** | Fix My Churn | Onboarding that builds anticipation |
+| **Litmus** | 2025 Email Design Standards | Technical compliance, dark mode |
+| **Email on Acid** | Deliverability Best Practices | Image ratios, spam avoidance |
 
 ---
 
-## Conversion Benchmarks
+## Design System
 
-Target these metrics (vs. industry average):
+### Typography Hierarchy
 
-| Metric | Industry Average | VPVR Target |
-|--------|------------------|-------------|
-| Open Rate | 30% | **35-40%** |
-| Click-to-Open Rate (CTOR) | 5% | **8-10%** |
-| Reply Rate | 1% | **3-5%** |
-| Review Conversion | 5% | **15-20%** |
+| Element | Font | Size | Weight | Color |
+|---------|------|------|--------|-------|
+| Newsletter Title | Cormorant | 42px | 500 | White |
+| Section Label | Cormorant | 14px | 600 | `#48A1AA` |
+| Section Heading | Cormorant | 28-32px | 500 | Black |
+| Body Copy | Montserrat | 15-16px | 400 | `#333333` |
+| CTA Button | Montserrat | 12px | 600 | White |
+| Footer | Montserrat | 11-12px | 400 | Various |
 
----
+**Typography Pattern**: Section label (small caps, teal) → Large heading (Cormorant) → Body (Montserrat)
 
-## The Complete Guest Journey
+### Color Palette
 
-### Sequence Overview
+| Color | Hex | Usage |
+|-------|-----|-------|
+| **Teal** | `#48A1AA` | Headers, buttons, links, labels |
+| **Deep Teal** | `#3A858C` | Gradients, hover states |
+| **Ocean Blue** | `#2E6E7A` | Footer backgrounds, depth |
+| **Cream** | `#EEE5C7` | Outer wrapper, decorative |
+| **Off-White** | `#F1ECEC` | Section backgrounds |
+| **Warm Sand** | `#F9F7F3` | Info boxes |
+| **Black** | `#000000` | Headlines |
+| **Dark Gray** | `#333333` | Body text |
 
-```
-Booking → 7 Days Before → 3 Days Before → Day Of → Day 2 → Checkout → 24h After → 6 Months → 12 Months
-   ↓           ↓              ↓            ↓         ↓        ↓          ↓           ↓           ↓
-Confirm    Excitement     Logistics    Access    Check-in   Farewell   Review    Win-Back    Nostalgia
-```
+### ⚠️ Email Client Compatibility (CRITICAL)
 
-### Email 1: Booking Confirmation
-**Timing**: Immediate
-**Goal**: Confirm booking, set expectations, build anticipation
+**These rules prevent rendering failures in Gmail, Outlook, Apple Mail, and Yahoo.**
 
-**Subject Line Options**:
-- "You're going to the Keys! Here's what happens next"
-- "Confirmed: %%PROPERTYNAME%% is yours [dates]"
-- "Pack your sunscreen—your Keys vacation is official"
+#### NEVER USE (Will Break)
 
-### Email 2: Excitement Builder (7 Days Before)
-**Timing**: 7 days before check-in
-**Goal**: Build anticipation, share local tips, prepare guest mentally
+| ❌ Don't Use | ✅ Use Instead | Why |
+|-------------|----------------|-----|
+| SVG images/icons | PNG images | SVG stripped by Gmail/Outlook |
+| `linear-gradient()` | Solid `background-color` | Fails in Outlook |
+| `rgba()` colors | Solid hex colors | Not supported |
+| `filter: invert()` | Pre-made white logo PNG | CSS filters stripped |
+| `box-shadow` | `border: 1px solid #e0e0e0` | Inconsistent support |
+| `border-radius` on images | Rectangular images | Stripped by Outlook |
+| Inline `<svg>` elements | Hosted image or accent bar | Completely stripped |
+| Unicode symbols (✦ · —) | HTML entities | May not render |
+| Black footer (`#1a1a1a`) | Ocean Blue `#2E6E7A` | Off-brand |
 
-**Subject Line Options**:
-- "7 days until your toes hit Keys sand"
-- "This time next week, you'll be here..."
-- "Your Florida Keys countdown starts now"
+#### HTML Entity Reference
 
-**Content Includes**:
-- What to pack (reef-safe sunscreen, water shoes, fishing gear)
-- Local insider tips (best sunset spots, restaurant reservations)
-- Link to digital guidebook
-- Weather expectations
+| Character | HTML Entity | Usage |
+|-----------|-------------|-------|
+| Bullet (·) | `&bull;` | Lists, separators |
+| Star (✦) | `&#10022;` | Decorative dividers |
+| Em dash (—) | `&mdash;` | Attribution |
+| Right arrow (→) | `&rarr;` | CTAs |
+| Left quote (") | `&ldquo;` | Testimonials |
+| Right quote (") | `&rdquo;` | Testimonials |
+| Copyright (©) | `&copy;` | Footer |
+| Ampersand (&) | `&amp;` | Always escape |
 
-### Email 3: Logistics (3 Days Before)
-**Timing**: 3 days before check-in
-**Goal**: Provide practical arrival information
+#### Logo Requirements
 
-**Subject Line Options**:
-- "Everything you need for a smooth arrival"
-- "Your check-in details are ready"
-- "3 days out: Here's your access info"
+**Logo Library (Jan 2026) — All in `/wp-content/uploads/2026/01/`**
 
-**Content Includes**:
-- Check-in time
-- Property address with map link
-- Parking instructions
-- Link to full guidebook
+**Base URL:** `https://paraisovacationrentals.com/wp-content/uploads/2026/01/`
 
-### Email 4: Access Details (Day Of - Morning)
-**Timing**: 8 AM on check-in day
-**Goal**: Provide access codes, WiFi, essential info
+**HORIZONTAL WORDMARK — Wide format (6:1 ratio):**
+| File | Dimensions | Logo Color | Use On |
+|------|------------|------------|--------|
+| `vpvr-logo-cream@2x.png` | 3384×570 | Cream | Dark backgrounds (Ocean Blue, Teal) ✅ |
+| `vpvr-logo-cream.png` | 1692×285 | Cream | Dark backgrounds (standard res) |
+| `vpvr-logo-teal@2x.png` | 3384×570 | Teal | Light backgrounds (White, Cream) ✅ |
+| `vpvr-logo-teal.png` | 1692×285 | Teal | Light backgrounds (standard res) |
 
-**Subject Line Options**:
-- "It's here! Your access code for %%PROPERTYNAME%%"
-- "Welcome day: Door code, WiFi & everything inside"
-- "You can check in starting at [time] — here's how"
-
-**Content Includes**:
-- Door code / lockbox instructions
-- WiFi network and password
-- Emergency contact numbers
-- "Text us if anything" invitation
-
-### Email 5: Check-In Follow-Up (Day 2)
-**Timing**: 10 AM, Day 2 of stay
-**Goal**: Problem prevention, ensure satisfaction, soft upsell
-
-**Subject Line Options**:
-- "How's your first morning in the Keys?"
-- "Quick check-in: Everything going smoothly?"
-- "Just making sure you found the coffee ☕"
-
-**Content Includes**:
-- Genuine "how's everything going?" question
-- Offer to help with anything
-- 1-2 local activity suggestions
-- Concierge services reminder
-
-### Email 6: Farewell (Checkout Day)
-**Timing**: 6 AM on checkout day
-**Goal**: Clear checkout instructions, plant review seed
-
-**Subject Line Options**:
-- "Checkout is easy—here's all you need to know"
-- "Sad to see you go! Quick checkout reminders"
-- "Before you head out: A few quick notes"
-
-**Content Includes**:
-- Checkout time reminder
-- Simple checkout steps (no elaborate cleaning required)
-- Thank you message
-- "We'd love to hear about your stay" preview
-
-### Email 7: Review Request (24-48 Hours After)
-**Timing**: 24-48 hours after checkout
-**Goal**: Convert satisfaction into 5-star reviews
-
-**Subject Line Options**:
-- "Would you share your experience? (Takes 60 seconds)"
-- "How was %%PROPERTYNAME%%? We'd love your feedback"
-- "A quick favor that means a lot to us"
-
-**Content Includes**:
-- Gratitude-first approach (thank before asking)
-- Specific review link (one click)
-- Why reviews matter (helps other travelers)
-- Direct booking CTA for return trip
-
-### Email 8: Win-Back (6 Months)
-**Timing**: 6 months after stay
-**Goal**: Re-engage for repeat booking
-
-**Subject Line Options**:
-- "Missing the Keys? We're missing you too"
-- "It's been 6 months since %%PROPERTYNAME%%..."
-- "Remember this view? It's waiting for you"
-
-**Content Includes**:
-- Nostalgia trigger (property photo)
-- "Book your return" CTA
-- Direct booking savings reminder (15-20%)
-- What's new at the property or in the Keys
-
-### Email 9: Anniversary (12 Months)
-**Timing**: 12 months after stay
-**Goal**: Annual nostalgia trigger
-
-**Subject Line Options**:
-- "One year ago today, you were here..."
-- "Anniversary reminder: Your Keys escape awaits"
-- "Time for your annual Florida Keys fix?"
+**ICONS (Palm tree only) — Square format:**
+| File | Dimensions | Logo Color | Use On |
+|------|------------|------------|--------|
+| `vpvr-icon-cream@2x.png` | 570×570 | Cream | Dark backgrounds ✅ |
+| `vpvr-icon-cream.png` | 285×285 | Cream | Dark backgrounds (standard res) |
+| `vpvr-icon-teal@2x.png` | 570×570 | Teal | Light backgrounds ✅ |
+| `vpvr-icon-teal.png` | 285×285 | Teal | Light backgrounds (standard res) |
 
 ---
 
-## Subject Line Formulas (The 8 That Work)
+**Email Logo Selection Guide:**
 
-Based on Campaign Monitor and Alex Cattoni research:
+| Email Section | Background Color | Logo File | Size |
+|---------------|------------------|-----------|------|
+| **Header (standard)** | Ocean Blue `#2E6E7A` | `vpvr-logo-cream@2x.png` | 280×47px |
+| **Header (light variant)** | White/Cream | `vpvr-logo-teal@2x.png` | 280×47px |
+| **Footer (standard)** | Ocean Blue `#2E6E7A` | `vpvr-icon-cream@2x.png` | 70×70px |
+| **Footer (light variant)** | White/Cream | `vpvr-icon-teal@2x.png` | 70×70px |
+| **CTA section** | Teal `#48A1AA` | `vpvr-icon-cream@2x.png` | 60×60px |
+| **Testimonial block** | Teal `#48A1AA` | (no logo, use quote mark) | — |
+| **Content section** | White `#FFFFFF` | `vpvr-icon-teal@2x.png` | 50×50px (if needed) |
 
-### 1. Question Formula
-```
-"Ready for your Florida Keys escape?"
-"What if your next vacation looked like this?"
-"Missing the ocean yet?"
+---
+
+**Code Examples:**
+
+```html
+<!-- DARK BACKGROUND (Ocean Blue #2E6E7A or Teal #48A1AA) -->
+
+<!-- Header: Horizontal wordmark - CREAM logo on dark -->
+<td style="background-color: #2E6E7A; padding: 45px 40px; text-align: center;">
+  <img src="https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-logo-cream@2x.png" 
+       alt="Villa Paraiso Vacation Rentals" 
+       width="280" height="47" 
+       style="display: block; margin: 0 auto 30px auto; width: 280px; height: 47px;">
+</td>
+
+<!-- Footer: Icon only - CREAM logo on dark -->
+<td style="background-color: #2E6E7A; padding: 40px; text-align: center;">
+  <img src="https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-icon-cream@2x.png" 
+       alt="Villa Paraiso" 
+       width="70" height="70" 
+       style="display: block; margin: 0 auto 20px auto; width: 70px; height: 70px;">
+</td>
+
+
+<!-- LIGHT BACKGROUND (White #FFFFFF or Cream #EEE5C7) -->
+
+<!-- Header: Horizontal wordmark - TEAL logo on light -->
+<td style="background-color: #FFFFFF; padding: 45px 40px; text-align: center;">
+  <img src="https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-logo-teal@2x.png" 
+       alt="Villa Paraiso Vacation Rentals" 
+       width="280" height="47" 
+       style="display: block; margin: 0 auto 30px auto; width: 280px; height: 47px;">
+</td>
+
+<!-- Footer: Icon only - TEAL logo on light -->
+<td style="background-color: #F8F6F3; padding: 40px; text-align: center;">
+  <img src="https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-icon-teal@2x.png" 
+       alt="Villa Paraiso" 
+       width="70" height="70" 
+       style="display: block; margin: 0 auto 20px auto; width: 70px; height: 70px;">
+</td>
 ```
 
-### 2. How-To Formula
-```
-"How to get the most out of your Keys trip"
-"How to find the best fishing spots in Marathon"
-"How to check in (takes 60 seconds)"
+**Quick Decision:**
+- Dark background? → Use **cream** logos
+- Light background? → Use **teal** logos
+- Need full brand name? → Use **wordmark** (horizontal)
+- Space limited or secondary? → Use **icon** (palm tree)
+
+**Legacy logos** (stacked format in `/2024/03/` and `/2026/01/VillaParaisoLogo-*.png`) should NOT be used — they display too small at email-appropriate sizes.
+
+---
+
+### Signature Design Elements
+
+1. **Accent Bar** (header to content transition — replaces SVG wave):
+```html
+<!-- Simple colored bar - works everywhere -->
+<tr>
+  <td style="background-color: #48A1AA; height: 6px; font-size: 1px; line-height: 1px;">&nbsp;</td>
+</tr>
 ```
 
-### 3. Scarcity Formula
-```
-"Your check-in details (valid for 24 hours)"
-"Last chance: Book your return at 15% off"
-"Only 3 weekends left this season"
-```
-
-### 4. Announcement Formula
-```
-"Big news: We upgraded the pool!"
-"Just added: Kayaks at %%PROPERTYNAME%%"
-"Your access code is ready"
-```
-
-### 5. Number Formula
-```
-"7 days until your toes hit Keys sand"
-"3 things to pack for the perfect Keys trip"
-"5 hidden gems near your rental"
+2. **Decorative Divider** (between sections):
+```html
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr>
+    <td style="width: 60px; height: 1px; background-color: #EEE5C7;"></td>
+    <td style="width: 60px; text-align: center; padding: 0 15px;">
+      <span style="font-family: 'Cormorant', Georgia, serif; font-size: 24px; color: #48A1AA;">&#10022;</span>
+    </td>
+    <td style="width: 60px; height: 1px; background-color: #EEE5C7;"></td>
+  </tr>
+</table>
 ```
 
-### 6. Curiosity Gap Formula
-```
-"The one thing most guests forget..."
-"This is why we love hosting you"
-"You won't believe what's new"
-```
-
-### 7. Surprise Formula
-```
-"Wait—did you forget something?"
-"This might make your day"
-"A little thank you from the team"
+3. **Section Label Pattern**:
+```html
+<p style="margin: 0 0 5px 0; font-family: 'Cormorant', Georgia, serif; font-size: 14px; font-weight: 600; color: #48A1AA; letter-spacing: 3px; text-transform: uppercase;">
+  Section Label
+</p>
+<h2 style="margin: 0 0 20px 0; font-family: 'Cormorant', Georgia, serif; font-size: 28px; font-weight: 500; color: #000000; line-height: 1.2;">
+  Main Heading Goes Here
+</h2>
 ```
 
-### 8. Personalization Formula
+4. **Header Background** (solid color for Outlook compatibility):
+```html
+<!-- Use Ocean Blue solid - gradients fail in Outlook -->
+background-color: #2E6E7A;
 ```
-"%%FIRSTNAME%%, your Keys countdown starts now"
-"%%FIRSTNAME%%, how was %%PROPERTYNAME%%?"
-"%%FIRSTNAME%%, we saved your spot"
+
+5. **Testimonial Block** (full-width teal):
+```html
+<tr>
+  <td style="background-color: #48A1AA; padding: 50px;">
+    <!-- Use HTML entity for quote mark, solid color instead of rgba -->
+    <span style="font-family: 'Cormorant', Georgia, serif; font-size: 72px; color: #7BC4CB; line-height: 0;">&ldquo;</span>
+    <p style="font-family: 'Cormorant', Georgia, serif; font-size: 22px; color: #ffffff; line-height: 1.6; font-style: italic;">
+      [Quote text]
+    </p>
+    <p style="font-family: 'Montserrat', Arial, sans-serif; font-size: 12px; font-weight: 600; color: #EEE5C7; letter-spacing: 2px; text-transform: uppercase;">
+      &mdash; Guest Name, City
+    </p>
+  </td>
+</tr>
+```
+
+6. **Footer** (MUST use Ocean Blue, not black):
+```html
+<tr>
+  <td style="background-color: #2E6E7A; padding: 40px;">
+    <!-- Use white PNG logo - no CSS filters -->
+    <img src="https://paraisovacationrentals.com/wp-content/uploads/2024/03/VillaParaisoLogoWhiteTransparent.png" 
+         alt="Villa Paraiso" width="70" height="70" style="display: block; margin: 0 auto;">
+    <!-- Footer text in white/cream on Ocean Blue -->
+  </td>
+</tr>
 ```
 
 ---
 
-## The Four U's Framework
-
-Every subject line should score high on:
-
-| U | Definition | Example |
-|---|------------|---------|
-| **Useful** | Provides value | "Your door code and WiFi" |
-| **Urgent** | Creates timeliness | "Check-in starts in 3 hours" |
-| **Ultra-specific** | Precise, not vague | "7 days until Marathon" |
-| **Unique** | Stands out in inbox | "Your private dock awaits" |
-
-**Test**: If your subject line scores 0 on all four U's, rewrite it.
-
----
-
-## Mobile-First Design Standards
-
-81% of emails are opened on mobile. Design accordingly:
-
-### Layout Rules
-- **Single column** (no multi-column layouts)
-- **600px max width** (email body)
-- **Minimum font**: 16px body, 22px headlines
-- **Touch targets**: 44×44px minimum for buttons
-- **White space**: 20-30px padding all sections
-
-### Visual Hierarchy
-```
-[LOGO - 80px square, centered]
-[HEADLINE - 22-28px, bold, teal #48A1AA]
-[BODY TEXT - 16px, dark gray #333333]
-[CTA BUTTON - Large, teal background, white text]
-[FOOTER - 12px, light gray]
-```
-
-### Dark Mode Optimization
-- Use `#333333` for text (not pure black)
-- Logo should have transparent background
-- Test in both light and dark modes
-
----
-
-## Luxury Design Principles
-
-VPVR emails should feel "Four Seasons of vacation rentals":
-
-### White Space = Premium
-- More padding, less crowding
-- Let content breathe
-- Single focus per email
-
-### Visual Storytelling
-- Lead with property imagery (not product shots)
-- Sunset/lifestyle photos over feature photos
-- Evoke emotion first, information second
-
-### Typography
-- **Headlines**: Cormorant (or serif fallback)
-- **Body**: Montserrat (or Arial fallback)
-- Line height: 1.6 for readability
-
-### Color Usage
-- Primary: `#48A1AA` (teal) for CTAs, headers
-- Secondary: `#EEE5C7` (cream) for accents
-- Background: `#F1ECEC` (off-white) for sections
-- Text: `#333333` (dark gray)
-
----
-
-## StayFi Technical Requirements
+## StayFi/Campaign Monitor Technical Requirements
 
 ### Merge Tags
+
 ```
 %%FIRSTNAME%%     - Guest first name
 %%LASTNAME%%      - Guest last name
@@ -325,226 +346,507 @@ VPVR emails should feel "Four Seasons of vacation rentals":
 %%RESERVATIONID%% - Booking reference
 ```
 
-### Auto-Fill Links
-```
-[HomePage]   - paraisovacationrentals.com
-[Guidebook]  - Property digital guidebook
-[BookAgain]  - Direct booking page
-[Review]     - Review request page
-```
+### Important Links
 
-### Format Requirements
-- Inline CSS only (email clients strip external stylesheets)
-- Images: Absolute URLs (hotlinks)
-- Max width: 600px
-- Output: HTML file ready for StayFi upload
+| Purpose | URL |
+|---------|-----|
+| Homepage | `https://paraisovacationrentals.com/` |
+| All Properties | `https://paraisovacationrentals.com/properties/` |
+| Google Reviews | `https://maps.app.goo.gl/aYcTTj4BC4cJhEnt5` |
+| Instagram | `https://www.instagram.com/villaparaisorentals/` |
+| Facebook | `https://www.facebook.com/people/Villa-Paraiso-Vacation-Rentals/100090096057720/` |
 
 ---
 
-## Base Template (Mobile-First, Luxury)
+## Master Email Template
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
   <title>%%PROPERTYNAME%% - Villa Paraiso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <!--[if mso]>
   <style type="text/css">
     body, table, td {font-family: Arial, Helvetica, sans-serif !important;}
   </style>
   <![endif]-->
 </head>
-<body style="margin: 0; padding: 0; background-color: #F1ECEC; font-family: 'Montserrat', Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased;">
-
-  <!-- Wrapper -->
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #F1ECEC;">
+<body style="margin: 0; padding: 0; background-color: #EEE5C7; font-family: 'Montserrat', Arial, sans-serif;">
+  
+  <!-- Preheader Text -->
+  <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
+    [PREHEADER_TEXT - 85-100 characters] ✦
+  </div>
+  
+  <!-- Email Container -->
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #EEE5C7;">
     <tr>
-      <td align="center" style="padding: 40px 20px;">
-
-        <!-- Email Container -->
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; background-color: #FFFFFF; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-
-          <!-- Header -->
+      <td align="center" style="padding: 30px 15px;">
+        
+        <!-- Main Content Table -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width: 600px; background-color: #ffffff;">
+          
+          <!-- Gradient Header -->
           <tr>
-            <td style="background-color: #48A1AA; padding: 40px 30px; text-align: center;">
-              <img src="https://paraisovacationrentals.com/wp-content/uploads/2024/03/villa-paraiso-logo.svg"
-                   alt="Villa Paraiso Vacation Rentals"
-                   width="80" height="80"
-                   style="width: 80px; height: 80px; display: block; margin: 0 auto;">
-              <p style="color: #FFFFFF; font-size: 14px; margin: 20px 0 0 0; font-style: italic; letter-spacing: 0.5px;">
-                A Partnership in Premier Hospitality
-              </p>
-            </td>
-          </tr>
-
-          <!-- Hero Image (Optional) -->
-          <tr>
-            <td style="padding: 0;">
-              <img src="[PROPERTY_HERO_IMAGE]"
-                   alt="%%PROPERTYNAME%%"
-                   width="600"
-                   style="width: 100%; height: auto; display: block;">
-            </td>
-          </tr>
-
-          <!-- Body Content -->
-          <tr>
-            <td style="padding: 50px 40px;">
-              <h1 style="color: #48A1AA; font-size: 26px; margin: 0 0 25px 0; font-weight: 600; line-height: 1.3;">
-                [HEADLINE]
-              </h1>
-              <p style="color: #333333; font-size: 16px; line-height: 1.7; margin: 0 0 25px 0;">
-                Hi %%FIRSTNAME%%,
-              </p>
-              <p style="color: #333333; font-size: 16px; line-height: 1.7; margin: 0 0 25px 0;">
-                [BODY CONTENT - Keep paragraphs short, 2-3 sentences max]
-              </p>
-
-              <!-- Info Box (Optional) -->
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #F9F7F3; border-radius: 8px; margin: 30px 0;">
+            <td style="background: linear-gradient(135deg, #48A1AA 0%, #3A858C 50%, #2E6E7A 100%); padding: 0;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
-                  <td style="padding: 25px;">
-                    <p style="color: #48A1AA; font-size: 14px; font-weight: 600; margin: 0 0 12px 0; text-transform: uppercase; letter-spacing: 1px;">
-                      [INFO BOX TITLE]
-                    </p>
-                    <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0;">
-                      [INFO BOX CONTENT]
+                  <td style="padding: 40px 40px 30px 40px; text-align: center;">
+                    <!-- Logo -->
+                    <img src="https://paraisovacationrentals.com/wp-content/uploads/2024/03/VillaParaisoLogoBlueTransparent_2.png" 
+                         alt="Villa Paraiso" 
+                         width="90" height="90" 
+                         style="display: block; margin: 0 auto 20px auto; border: 3px solid rgba(238, 229, 199, 0.3); border-radius: 50%; padding: 10px; background: rgba(255,255,255,0.1);">
+                    
+                    <!-- Decorative Line -->
+                    <div style="width: 60px; height: 1px; background-color: #EEE5C7; margin: 0 auto 25px auto; opacity: 0.6;"></div>
+                    
+                    <!-- Email Title -->
+                    <h1 style="margin: 0; font-family: 'Cormorant', Georgia, serif; font-size: 36px; font-weight: 500; color: #ffffff; letter-spacing: 2px;">
+                      [EMAIL_TITLE]
+                    </h1>
+                    <p style="margin: 8px 0 0 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 13px; font-weight: 300; color: #EEE5C7; letter-spacing: 3px; text-transform: uppercase;">
+                      [SUBTITLE_OR_DATE]
                     </p>
                   </td>
                 </tr>
-              </table>
-
-              <!-- CTA Button -->
-              <table role="presentation" cellpadding="0" cellspacing="0" style="margin: 35px 0;" width="100%">
+                
+                <!-- Wave Divider -->
                 <tr>
-                  <td align="center">
-                    <a href="[LINK]" style="display: inline-block; background-color: #48A1AA; padding: 16px 40px; color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 8px; letter-spacing: 0.5px;">
-                      [BUTTON TEXT]
+                  <td style="font-size: 0; line-height: 0;">
+                    <svg viewBox="0 0 600 40" style="display: block; width: 100%;" preserveAspectRatio="none">
+                      <path d="M0,40 L0,20 Q150,0 300,20 Q450,40 600,20 L600,40 Z" fill="#ffffff"/>
+                    </svg>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Body Content -->
+          <tr>
+            <td style="padding: 35px 50px 40px 50px;">
+              <p style="margin: 0 0 5px 0; font-family: 'Cormorant', Georgia, serif; font-size: 14px; font-weight: 600; color: #48A1AA; letter-spacing: 3px; text-transform: uppercase;">
+                [SECTION_LABEL]
+              </p>
+              <h2 style="margin: 0 0 20px 0; font-family: 'Cormorant', Georgia, serif; font-size: 28px; font-weight: 500; color: #000000; line-height: 1.2;">
+                [MAIN_HEADLINE]
+              </h2>
+              <p style="margin: 0 0 20px 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 15px; font-weight: 400; color: #333333; line-height: 1.8;">
+                Hi %%FIRSTNAME%%,
+              </p>
+              <p style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 15px; font-weight: 400; color: #333333; line-height: 1.8;">
+                [BODY_CONTENT]
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Hero Image (if applicable) -->
+          <tr>
+            <td style="padding: 0;">
+              <img src="[PROPERTY_HERO_IMAGE_URL]" 
+                   alt="[PROPERTY_NAME]" 
+                   width="600" 
+                   style="display: block; width: 100%; height: auto;">
+            </td>
+          </tr>
+          
+          <!-- CTA Section -->
+          <tr>
+            <td style="padding: 40px 50px; text-align: center;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                <tr>
+                  <td style="background-color: #48A1AA;">
+                    <a href="[CTA_LINK]" 
+                       target="_blank" 
+                       style="display: inline-block; padding: 16px 40px; font-family: 'Montserrat', Arial, sans-serif; font-size: 12px; font-weight: 600; color: #ffffff; text-decoration: none; letter-spacing: 2px; text-transform: uppercase;">
+                      [CTA_TEXT] →
                     </a>
                   </td>
                 </tr>
               </table>
-
-              <p style="color: #333333; font-size: 16px; line-height: 1.7; margin: 25px 0 0 0;">
-                [CLOSING MESSAGE]
-              </p>
-              <p style="color: #333333; font-size: 16px; line-height: 1.7; margin: 25px 0 0 0;">
-                Warm regards,<br>
-                <strong style="color: #48A1AA;">The Villa Paraiso Team</strong>
-              </p>
             </td>
           </tr>
-
+          
           <!-- Footer -->
           <tr>
-            <td style="background-color: #F9F7F3; padding: 35px; text-align: center; border-top: 1px solid #EEE5C7;">
-              <p style="color: #48A1AA; font-size: 15px; font-weight: 600; margin: 0 0 10px 0;">
-                Villa Paraiso Vacation Rentals
-              </p>
-              <p style="color: #666666; font-size: 13px; margin: 0 0 15px 0; line-height: 1.6;">
-                1154 Camino Del Vientos, Marathon, FL 33050<br>
-                (786) 348-1396 | info@paraisovacationrentals.com
-              </p>
-              <p style="color: #999999; font-size: 12px; margin: 0;">
-                <a href="[Unsubscribe]" style="color: #48A1AA; text-decoration: underline;">Unsubscribe</a> |
-                <a href="[HomePage]" style="color: #48A1AA; text-decoration: underline;">Visit Website</a>
-              </p>
+            <td style="background-color: #2E6E7A; padding: 40px 50px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td style="text-align: center;">
+                    <img src="https://paraisovacationrentals.com/wp-content/uploads/2024/03/VillaParaisoLogoBlueTransparent_2.png" 
+                         alt="Villa Paraiso" 
+                         width="60" height="60" 
+                         style="display: inline-block; margin-bottom: 15px; opacity: 0.9;">
+                    
+                    <p style="margin: 0 0 5px 0; font-family: 'Cormorant', Georgia, serif; font-size: 18px; font-weight: 500; color: #ffffff; letter-spacing: 1px;">
+                      Villa Paraiso Vacation Rentals
+                    </p>
+                    <p style="margin: 0 0 20px 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 11px; font-weight: 400; color: #EEE5C7; font-style: italic;">
+                      A Partnership in Premier Hospitality
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin-bottom: 20px;">
+                      <tr>
+                        <td style="padding: 0 10px;">
+                          <a href="https://www.instagram.com/villaparaisorentals/" style="font-family: 'Montserrat', Arial, sans-serif; font-size: 11px; color: #EEE5C7; text-decoration: none; letter-spacing: 1px;">
+                            INSTAGRAM
+                          </a>
+                        </td>
+                        <td style="padding: 0 10px;">
+                          <a href="https://www.facebook.com/people/Villa-Paraiso-Vacation-Rentals/100090096057720/" style="font-family: 'Montserrat', Arial, sans-serif; font-size: 11px; color: #EEE5C7; text-decoration: none; letter-spacing: 1px;">
+                            FACEBOOK
+                          </a>
+                        </td>
+                        <td style="padding: 0 10px;">
+                          <a href="https://paraisovacationrentals.com/" style="font-family: 'Montserrat', Arial, sans-serif; font-size: 11px; color: #EEE5C7; text-decoration: none; letter-spacing: 1px;">
+                            WEBSITE
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <!-- Contact -->
+                    <p style="margin: 0 0 15px 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 11px; font-weight: 400; color: rgba(238, 229, 199, 0.7); line-height: 1.6;">
+                      Marathon & Key Colony Beach, Florida Keys<br>
+                      <a href="tel:7863481396" style="color: rgba(238, 229, 199, 0.9); text-decoration: none;">(786) 348-1396</a> · 
+                      <a href="mailto:info@paraisovacationrentals.com" style="color: rgba(238, 229, 199, 0.9); text-decoration: none;">info@paraisovacationrentals.com</a>
+                    </p>
+                    
+                    <!-- Unsubscribe -->
+                    <p style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 10px; font-weight: 400; color: rgba(238, 229, 199, 0.5);">
+                      <a href="[Unsubscribe]" style="color: rgba(238, 229, 199, 0.7); text-decoration: underline;">Unsubscribe</a> · 
+                      <a href="#" style="color: rgba(238, 229, 199, 0.7); text-decoration: underline;">View in Browser</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
-
+          
         </table>
-
       </td>
     </tr>
   </table>
-
 </body>
 </html>
 ```
 
 ---
 
-## High-Converting Review Request Template
+## Module Library
 
-This email is critical for generating reviews. Uses gratitude-first approach:
+### Three-Column Property Grid
 
 ```html
-<!-- Subject: Would you share your experience? (Takes 60 seconds) -->
-
-<h1 style="color: #48A1AA; font-size: 26px;">
-  Thank you for staying with us, %%FIRSTNAME%%
-</h1>
-
-<p>We hope you made some wonderful memories at %%PROPERTYNAME%%.</p>
-
-<p>If you have 60 seconds, we'd be so grateful if you could share your experience. Your review helps other travelers find their perfect Keys getaway—and means the world to our small team.</p>
-
-<!-- Single, prominent CTA -->
-<a href="[Review]" style="...">
-  Share Your Experience
-</a>
-
-<p><strong>Psst...</strong> Planning a return trip? Book direct at paraisovacationrentals.com and save 15-20% on your next stay.</p>
+<tr>
+  <td style="background-color: #F1ECEC; padding: 45px 30px;">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tr>
+        <td style="text-align: center; padding-bottom: 30px;">
+          <p style="margin: 0 0 5px 0; font-family: 'Cormorant', Georgia, serif; font-size: 14px; font-weight: 600; color: #48A1AA; letter-spacing: 3px; text-transform: uppercase;">
+            [LABEL]
+          </p>
+          <h2 style="margin: 0; font-family: 'Cormorant', Georgia, serif; font-size: 28px; font-weight: 500; color: #000000;">
+            [HEADING]
+          </h2>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+              <!-- Property 1 -->
+              <td width="33%" valign="top" style="padding: 0 8px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff;">
+                  <tr>
+                    <td>
+                      <img src="[PROPERTY_1_IMAGE]" alt="[PROPERTY_1_NAME]" width="100%" style="display: block;">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 15px 12px;">
+                      <h3 style="margin: 0 0 5px 0; font-family: 'Cormorant', Georgia, serif; font-size: 18px; font-weight: 600; color: #000000;">
+                        [PROPERTY_1_NAME]
+                      </h3>
+                      <p style="margin: 0 0 8px 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 11px; color: #48A1AA; font-weight: 500;">
+                        [PROPERTY_1_LOCATION]
+                      </p>
+                      <p style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 12px; color: #333333;">
+                        [PROPERTY_1_DETAILS]
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <!-- Property 2 -->
+              <td width="33%" valign="top" style="padding: 0 8px;">
+                <!-- Same structure as Property 1 -->
+              </td>
+              <!-- Property 3 -->
+              <td width="33%" valign="top" style="padding: 0 8px;">
+                <!-- Same structure as Property 1 -->
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
 ```
 
-**Key Elements**:
-- Thank before asking
-- Make it easy (one click)
-- Explain why it matters
-- Subtle direct booking reminder
+### Local Insider Block
+
+```html
+<tr>
+  <td style="padding: 50px;">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tr>
+        <td width="60" valign="top">
+          <div style="width: 50px; height: 50px; background-color: #48A1AA; border-radius: 50%; text-align: center; line-height: 50px;">
+            <span style="font-family: 'Cormorant', Georgia, serif; font-size: 24px; color: #ffffff;">✦</span>
+          </div>
+        </td>
+        <td valign="top" style="padding-left: 20px;">
+          <p style="margin: 0 0 5px 0; font-family: 'Cormorant', Georgia, serif; font-size: 14px; font-weight: 600; color: #48A1AA; letter-spacing: 3px; text-transform: uppercase;">
+            Local Insider
+          </p>
+          <h2 style="margin: 0 0 15px 0; font-family: 'Cormorant', Georgia, serif; font-size: 24px; font-weight: 500; color: #000000; line-height: 1.3;">
+            [INSIDER_HEADING]
+          </h2>
+          <p style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 14px; font-weight: 400; color: #333333; line-height: 1.7;">
+            [INSIDER_CONTENT]
+          </p>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+```
+
+### Info Box
+
+```html
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #F9F7F3; margin: 25px 0;">
+  <tr>
+    <td style="padding: 25px; border-left: 4px solid #48A1AA;">
+      <p style="margin: 0 0 10px 0; font-family: 'Cormorant', Georgia, serif; font-size: 14px; font-weight: 600; color: #48A1AA; letter-spacing: 2px; text-transform: uppercase;">
+        [INFO_TITLE]
+      </p>
+      <p style="margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 15px; color: #333333; line-height: 1.6;">
+        [INFO_CONTENT]
+      </p>
+    </td>
+  </tr>
+</table>
+```
+
+### Outline Button (Secondary CTA)
+
+```html
+<table role="presentation" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td style="background-color: transparent; border: 1px solid #48A1AA;">
+      <a href="[LINK]" 
+         target="_blank" 
+         style="display: inline-block; padding: 12px 25px; font-family: 'Montserrat', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #48A1AA; text-decoration: none; letter-spacing: 2px; text-transform: uppercase;">
+        [BUTTON_TEXT]
+      </a>
+    </td>
+  </tr>
+</table>
+```
 
 ---
 
-## Property Lookup
+## Email Types & The Guest Journey
 
-| Property | URL Slug |
-|----------|----------|
-| Deep Blue | `deep-blue` |
-| Mermaid's Paradise | `mermaids-paradise-pool-dock-games-views` |
-| Ocean Muse | `ocean-muse-lux-waterfront-escape-pool-dock` |
-| Blue Pearl | `blue-pearl-waterfront-oasis-w-pool-70-dock` |
-| Emerald Oasis | `emerald-oasis-lux-waterfront-gem-heated-pool-kayaks` |
-| Seabreeze Cove | `seabreeze-cove-waterfront-gem-38-foot-dock-cabana-club` |
+### Sequence Overview
 
-Fetch property images: `https://paraisovacationrentals.com/property/[slug]/`
+```
+Booking → 7 Days Before → 3 Days Before → Day Of → Day 2 → Checkout → 24h After → 6 Months
+   ↓           ↓              ↓            ↓         ↓        ↓          ↓           ↓
+Confirm    Excitement     Logistics    Access    Check-in   Farewell   Review    Win-Back
+```
+
+### Email-Specific Guidelines
+
+| Email Type | Tone | Hero Image | Primary CTA |
+|------------|------|------------|-------------|
+| Booking Confirmation | Celebratory | Property hero | View Reservation |
+| Excitement Builder | Aspirational | Sunset/lifestyle | Explore the Keys |
+| Logistics | Helpful, clear | Property exterior | View Check-In Details |
+| Access Details | Practical | Property entrance | Get Directions |
+| Check-In Follow-Up | Warm, attentive | Amenity shot | Book an Activity |
+| Farewell | Grateful, warm | Sunset | Book Your Return |
+| Review Request | Personal | Best property shot | Share Your Experience |
+| Win-Back | Nostalgic | Multiple properties | Book Direct & Save |
+| Newsletter | Editorial, curated | Lifestyle/seasonal | Multiple CTAs |
 
 ---
 
-## Quality Checklist
+## Subject Line Formulas
 
-Before uploading any email:
+### The 8 Proven Formulas
 
-- [ ] Subject line uses one of the 8 formulas
-- [ ] Subject line scores 3+ on the Four U's
-- [ ] Single column, mobile-first layout
-- [ ] 600px max width
-- [ ] All images have absolute URLs
-- [ ] CTA button is 44px+ height (touch target)
-- [ ] Font size 16px+ for body text
-- [ ] Inline CSS only (no external stylesheets)
-- [ ] Tested in both light and dark mode
-- [ ] Merge tags validated (%%FIRSTNAME%%, etc.)
+1. **Question**: "Ready for your Florida Keys escape?"
+2. **How-To**: "How to check in (takes 60 seconds)"
+3. **Scarcity**: "Last chance: Book your return at 15% off"
+4. **Announcement**: "Your access code is ready"
+5. **Number**: "7 days until your toes hit Keys sand"
+6. **Curiosity Gap**: "The one thing most guests forget..."
+7. **Surprise**: "A little thank you from the team"
+8. **Personalization**: "%%FIRSTNAME%%, your Keys adventure awaits"
+
+### The Four U's Scorecard
+
+Rate each subject line 1-4 on:
+- **Useful**: Does it promise value?
+- **Urgent**: Is there a time element?
+- **Ultra-specific**: Are details concrete?
+- **Unique**: Does it stand out?
+
+Target: **Score 10+** out of 16
+
+---
+
+## Pre-Delivery Checklist
+
+Before presenting ANY email, Claude must verify:
+
+### Links & Images
+- [ ] Logo URL loads (web_fetch to confirm)
+- [ ] Hero image URL loads
+- [ ] All gallery images load
+- [ ] CTA destination is valid
+- [ ] Social links work
+- [ ] Property page is live
+
+### Email Client Compatibility ⚠️
+- [ ] Logo is PNG format (not SVG)
+- [ ] No inline SVG elements
+- [ ] No CSS gradients (solid colors only)
+- [ ] No rgba() colors (solid hex only)
+- [ ] No CSS filters (brightness, invert)
+- [ ] No box-shadow (use border instead)
+- [ ] Footer uses Ocean Blue #2E6E7A (not black)
+- [ ] Special characters use HTML entities (&bull; &mdash; &#10022;)
+
+### Design Quality
+- [ ] Follows luxury editorial aesthetic (not generic)
+- [ ] Typography hierarchy is correct (Cormorant headings, Montserrat body)
+- [ ] Brand colors are accurate
+- [ ] Accent bar or decorative elements included
+- [ ] Footer uses deep ocean blue (#2E6E7A)
+
+### Technical
+- [ ] All CSS is inline
+- [ ] Images have alt text
+- [ ] Merge tags use %%FORMAT%%
+- [ ] MSO conditionals for Outlook
+- [ ] Preheader text included
 - [ ] Unsubscribe link present
-- [ ] Direct booking savings mentioned where appropriate
+
+### Content
+- [ ] Subject line uses proven formula
+- [ ] Preview text is 85-100 characters
+- [ ] Copy is warm, not corporate
+- [ ] Single clear primary CTA
+- [ ] Personalization tokens included
 
 ---
 
-## Try Asking
+## Audit Report Format
 
-- "Create a complete guest journey email sequence for Blue Pearl"
-- "Write a high-converting review request email"
-- "Design an excitement-building email for 7 days before check-in"
-- "Create a win-back email for guests who stayed 6 months ago"
-- "Write a marketing email for our summer special"
+Present results to user:
+
+```
+## Email Audit Complete ✓
+
+### Content
+- Subject: [SUBJECT LINE]
+- Four U's Score: [X]/16
+- Preview: [PREVIEW TEXT]
+
+### Links Validated
+✅ Logo: Confirmed
+✅ Hero Image: [URL confirmed]
+✅ CTA: [Destination confirmed]
+✅ Social: Instagram, Facebook
+✅ Property Page: [URL confirmed]
+
+### Design
+✅ Luxury editorial aesthetic applied
+✅ Cormorant/Montserrat typography
+✅ Brand colors consistent
+✅ Wave divider included
+
+### Technical
+✅ Inline CSS only
+✅ Outlook fallbacks included
+✅ Dark mode meta tags
+✅ Mobile responsive
+
+**Ready for StayFi upload.**
+```
+
+---
+
+## Handling Failures
+
+### If property page doesn't load:
+"I couldn't load [property name] from paraisovacationrentals.com. Please verify the property URL or upload photos directly."
+
+### If image URL is broken:
+Mark with placeholder and flag:
+```html
+<td style="background-color: #F9F7F3; padding: 40px; text-align: center;">
+  <p style="color: #666; font-size: 14px;">
+    ⚠️ [IMAGE NEEDED: Property hero photo]<br>
+    <small>Upload image or provide URL</small>
+  </p>
+</td>
+```
+
+### If external link is down:
+"The [service] link appears temporarily unavailable. I've kept it in the email but recommend testing before sending."
+
+---
+
+## Example Prompts
+
+- "Create a welcome email for guests arriving at Blue Pearl next week"
+- "Write a review request email that goes to our Google page"
+- "Design a win-back email for guests who stayed 6 months ago"
+- "Create a January newsletter featuring winter fishing season"
+- "Build a check-in details email for Ocean Muse"
+- "Make a farewell email with a direct booking CTA"
 
 ---
 
 ## Related VPVR Skills
 
-- **vpvr-brand**: Brand colors, fonts, logos
-- **property-descriptions**: Property details to include
-- **gemini-images**: Generate email header images
-- **social-content**: Repurpose email content for social
+| Skill | Use For |
+|-------|---------|
+| **frontend-design** | Bold aesthetic direction, design thinking |
+| **vpvr-brand** | Colors, fonts, logos, brand voice |
+| **property-descriptions** | Property details and amenity lists |
+| **gemini-images** | Generate custom header images |
+| **social-content** | Repurpose email content for social |
+
+---
+
+## Changelog
+
+- **v2.3** (Jan 2026): Comprehensive logo documentation with Email Logo Selection Guide. Added code examples for both dark AND light background variations. Clear decision framework: dark bg → cream logos, light bg → teal logos. Added CTA section and content section logo guidance.
+- **v2.2** (Jan 2026): Added complete logo library with 8 variants (icons + horizontal wordmarks in cream/teal, @1x/@2x). Header now uses horizontal wordmark `vpvr-logo-cream@2x.png` at 280×47px. Footer uses icon `vpvr-icon-cream@2x.png` at 70×70px. Deprecated stacked logos that displayed too small.
+- **v2.1** (Jan 2026): Added Email Client Compatibility section with critical rules for Gmail/Outlook support. Fixed: SVG logos → PNG, CSS gradients → solid colors, rgba() → hex, inline SVG → accent bars, unicode → HTML entities, black footer → Ocean Blue. Updated Pre-Delivery Checklist with compatibility checks.
+- **v2.0** (Jan 2026): Complete redesign with luxury editorial aesthetic, frontend-design skill integration, updated templates with wave dividers and Cormorant typography, simplified property sourcing workflow
