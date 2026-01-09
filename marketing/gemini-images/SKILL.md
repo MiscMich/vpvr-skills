@@ -7,6 +7,18 @@ description: Create optimized AI image prompts for Villa Paraiso Vacation Rental
 
 Create high-quality AI-generated images for VPVR marketing using proven prompting methodologies.
 
+## Property Data Source
+
+**Always fetch current property information from the VPVR website.** Properties are added and removed regularly.
+
+| Resource | URL | What You Get |
+|----------|-----|--------------|
+| **All Properties** | `https://paraisovacationrentals.com/properties/` | Current property list with photos |
+| **Individual Property** | `https://paraisovacationrentals.com/property/[slug]/` | Photos, amenities, descriptions |
+| **Property Images** | Fetch from individual property pages | Hero images, galleries for reference |
+
+**Before creating prompts**: Fetch the property page to get current photos, features, and accurate details.
+
 ## AI Image Generation Platforms (2026)
 
 | Platform | Best For | Key Strengths |

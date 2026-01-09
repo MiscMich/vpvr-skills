@@ -7,6 +7,19 @@ description: Create high-converting vacation rental listing descriptions using e
 
 Create high-converting vacation rental listings using proven expert methodologies.
 
+## Property Data Source
+
+**Always fetch current property information from the VPVR website.** Properties are added and removed regularly.
+
+| Resource | URL | What You Get |
+|----------|-----|--------------|
+| **All Properties** | `https://paraisovacationrentals.com/properties/` | Current property list, names, slugs |
+| **Individual Property** | `https://paraisovacationrentals.com/property/[slug]/` | Photos, amenities, existing descriptions |
+
+**Before writing descriptions**: Fetch the property page to get accurate bedroom counts, amenities, photos, and unique features.
+
+---
+
 ## Expert Methodologies Incorporated
 
 | Expert | Framework | Application |

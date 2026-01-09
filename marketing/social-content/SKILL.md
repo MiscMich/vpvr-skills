@@ -7,6 +7,19 @@ description: Create high-performing social media content for Villa Paraiso Vacat
 
 Create scroll-stopping social content using proven expert methodologies.
 
+## Property Data Source
+
+**Always fetch current property information from the VPVR website.** Properties are added and removed regularly.
+
+| Resource | URL | What You Get |
+|----------|-----|--------------|
+| **All Properties** | `https://paraisovacationrentals.com/properties/` | Current property list with photos |
+| **Individual Property** | `https://paraisovacationrentals.com/property/[slug]/` | Photos, amenities, unique features |
+
+**Before creating content**: Fetch property pages to get current photos, accurate features, and property names for tagging.
+
+---
+
 ## Expert Methodologies Incorporated
 
 | Expert | Framework | Application |

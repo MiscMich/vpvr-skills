@@ -7,6 +7,20 @@ description: Comprehensive SEO and AEO (Answer Engine Optimization) for Villa Pa
 
 Optimize VPVR content for both traditional search and AI-powered answer engines.
 
+## Property Data Source
+
+**Always fetch current property information from the VPVR website.** Properties are added and removed regularly.
+
+| Resource | URL | What You Get |
+|----------|-----|--------------|
+| **All Properties** | `https://paraisovacationrentals.com/properties/` | Current property list for optimization |
+| **Individual Property** | `https://paraisovacationrentals.com/property/[slug]/` | Property pages to audit/optimize |
+| **Existing Blog** | `https://paraisovacationrentals.com/blog/` | Current content for internal linking |
+
+**For SEO audits**: Fetch current property and blog pages to ensure recommendations reflect live content.
+
+---
+
 ## Expert Methodologies Incorporated
 
 | Expert | Framework | Application |

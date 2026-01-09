@@ -7,6 +7,20 @@ description: Create extremely high-converting, beautiful HTML email templates fo
 
 Create extremely high-converting, beautiful emails using proven email marketing expert methodologies.
 
+## Property Data Source
+
+**Always fetch current property information from the VPVR website.** Properties are added and removed regularly.
+
+| Resource | URL | What You Get |
+|----------|-----|--------------|
+| **All Properties** | `https://paraisovacationrentals.com/properties/` | Current property list with photos |
+| **Individual Property** | `https://paraisovacationrentals.com/property/[slug]/` | Photos, amenities, check-in details |
+| **Property Images** | Fetch from individual property pages | Hero images for email headers |
+
+**Before creating emails**: Fetch the property page to get current photos (for image URLs), accurate amenities, and property-specific details.
+
+---
+
 ## Expert Methodologies Incorporated
 
 | Expert | Framework | Application |

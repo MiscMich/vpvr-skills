@@ -7,6 +7,20 @@ description: Villa Paraiso Vacation Rentals brand styling for documents, web, em
 
 Apply consistent VPVR brand identity across all channels and formats.
 
+## Property & Asset Sources
+
+**Fetch current assets from the VPVR website.** Properties and assets are updated regularly.
+
+| Resource | URL | What You Get |
+|----------|-----|--------------|
+| **Logo SVG** | `https://paraisovacationrentals.com/wp-content/uploads/2024/03/villa-paraiso-logo.svg` | Current logo |
+| **All Properties** | `https://paraisovacationrentals.com/properties/` | Current property list with photos |
+| **Individual Property** | `https://paraisovacationrentals.com/property/[slug]/` | Property photos for branded materials |
+
+**For branded materials**: Fetch property pages to get current photos and ensure consistency with live website.
+
+---
+
 ## Expert Methodologies Incorporated
 
 | Expert | Framework | Application |

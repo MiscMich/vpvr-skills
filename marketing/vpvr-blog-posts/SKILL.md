@@ -7,6 +7,20 @@ description: Create SEO/AEO-optimized blog posts for Villa Paraiso Vacation Rent
 
 Create high-ranking blog content using proven SEO/AEO expert methodologies.
 
+## Property Data Source
+
+**Always fetch current property information from the VPVR website.** Properties are added and removed regularly.
+
+| Resource | URL | What You Get |
+|----------|-----|--------------|
+| **All Properties** | `https://paraisovacationrentals.com/properties/` | Current property list for internal linking |
+| **Individual Property** | `https://paraisovacationrentals.com/property/[slug]/` | Property details for blog content |
+| **Existing Blog** | `https://paraisovacationrentals.com/blog/` | Current posts to avoid duplication |
+
+**Before writing posts**: Fetch the properties page to get current listings for internal links and accurate property references.
+
+---
+
 ## Expert Methodologies Incorporated
 
 | Expert | Framework | Application |

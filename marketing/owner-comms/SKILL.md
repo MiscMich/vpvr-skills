@@ -7,6 +7,19 @@ description: Create high-converting B2B communications for Villa Paraiso Vacatio
 
 Create professional B2B content that converts prospects to owners and retains existing relationships.
 
+## Property Data Source
+
+**Always fetch current property information from the VPVR website.** Properties are added and removed regularly.
+
+| Resource | URL | What You Get |
+|----------|-----|--------------|
+| **All Properties** | `https://paraisovacationrentals.com/properties/` | Current portfolio for social proof |
+| **Individual Property** | `https://paraisovacationrentals.com/property/[slug]/` | Property details for case studies |
+
+**For owner reports**: Fetch current property data to ensure accurate portfolio references and comparable properties.
+
+---
+
 ## Expert Methodologies Incorporated
 
 | Expert | Framework | Application |
