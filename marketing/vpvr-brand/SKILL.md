@@ -436,7 +436,10 @@ font-family: 'Helvetica Neue', Arial, sans-serif;
 
 | Asset | URL |
 |-------|-----|
-| Logo SVG | `https://paraisovacationrentals.com/wp-content/uploads/2024/03/villa-paraiso-logo.svg` |
+| Logo (Teal) | `https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-logo-teal@2x.png` |
+| Logo (Cream) | `https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-logo-cream@2x.png` |
+| Icon (Teal) | `https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-icon-teal@2x.png` |
+| Icon (Cream) | `https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-icon-cream@2x.png` |
 | Favicon | `https://paraisovacationrentals.com/wp-content/uploads/2024/03/favicon.png` |
 | OG Image | `https://paraisovacationrentals.com/wp-content/uploads/2024/03/villa-paraiso-OG-img.jpg` |
 

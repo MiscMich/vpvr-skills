@@ -80,8 +80,10 @@ Each skill contains:
 
 | Skill | Update |
 |-------|--------|
+| vpvr-brand | v2.1 - Comprehensive logo library with selection guide, new 2026 horizontal wordmarks |
+| stayfi-emails | v2.3 - Email logo selection guide, updated to 2026 logo system |
+| vpvr-seo-aeo | Property Data Source section, AI citation optimization |
 | gemini-images | Gemini 3 Pro multi-image reference system |
-| vpvr-seo-aeo | AI citation optimization, zero-click strategy |
 | linkedin-ceo | Multi-image posts (6.60% engagement rate) |
 | owner-comms | JOLT Effect for overcoming indecision |
 

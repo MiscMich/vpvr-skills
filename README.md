@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://paraisovacationrentals.com/wp-content/uploads/2024/03/villa-paraiso-logo.svg" alt="Villa Paraiso Logo" width="120">
+  <img src="https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-logo-teal@2x.png" alt="Villa Paraiso Logo" width="280">
 </p>
 
 <h1 align="center">VPVR Skills Hub</h1>
@@ -193,8 +193,10 @@ https://raw.githubusercontent.com/MiscMich/vpvr-skills/main/skill-from-masters/S
 
 | Date | Skill | What Changed |
 |------|-------|--------------|
+| Jan 2026 | vpvr-brand | v2.1 - Comprehensive logo library with selection guide, new 2026 horizontal wordmarks |
+| Jan 2026 | stayfi-emails | v2.3 - Email logo selection guide, updated to 2026 logo system |
+| Jan 2026 | vpvr-seo-aeo | Property Data Source section, AI citation optimization |
 | Jan 2026 | gemini-images | Gemini 3 Pro (Nano Banana) multi-image reference system |
-| Jan 2026 | vpvr-seo-aeo | AI citation optimization, zero-click strategy |
 | Jan 2026 | linkedin-ceo | Multi-image posts (6.60% engagement rate) |
 | Jan 2026 | owner-comms | JOLT Effect framework for overcoming indecision |
 

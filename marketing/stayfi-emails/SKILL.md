@@ -322,8 +322,8 @@ background-color: #2E6E7A;
 ```html
 <tr>
   <td style="background-color: #2E6E7A; padding: 40px;">
-    <!-- Use white PNG logo - no CSS filters -->
-    <img src="https://paraisovacationrentals.com/wp-content/uploads/2024/03/VillaParaisoLogoWhiteTransparent.png" 
+    <!-- Use cream icon on dark backgrounds -->
+    <img src="https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-icon-cream@2x.png"
          alt="Villa Paraiso" width="70" height="70" style="display: block; margin: 0 auto;">
     <!-- Footer text in white/cream on Ocean Blue -->
   </td>
@@ -398,10 +398,10 @@ background-color: #2E6E7A;
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
                   <td style="padding: 40px 40px 30px 40px; text-align: center;">
-                    <!-- Logo -->
-                    <img src="https://paraisovacationrentals.com/wp-content/uploads/2024/03/VillaParaisoLogoBlueTransparent_2.png" 
-                         alt="Villa Paraiso" 
-                         width="90" height="90" 
+                    <!-- Logo (cream icon on teal gradient) -->
+                    <img src="https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-icon-cream@2x.png"
+                         alt="Villa Paraiso"
+                         width="90" height="90"
                          style="display: block; margin: 0 auto 20px auto; border: 3px solid rgba(238, 229, 199, 0.3); border-radius: 50%; padding: 10px; background: rgba(255,255,255,0.1);">
                     
                     <!-- Decorative Line -->
@@ -480,9 +480,9 @@ background-color: #2E6E7A;
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
                   <td style="text-align: center;">
-                    <img src="https://paraisovacationrentals.com/wp-content/uploads/2024/03/VillaParaisoLogoBlueTransparent_2.png" 
-                         alt="Villa Paraiso" 
-                         width="60" height="60" 
+                    <img src="https://paraisovacationrentals.com/wp-content/uploads/2026/01/vpvr-icon-cream@2x.png"
+                         alt="Villa Paraiso"
+                         width="60" height="60"
                          style="display: inline-block; margin-bottom: 15px; opacity: 0.9;">
                     
                     <p style="margin: 0 0 5px 0; font-family: 'Cormorant', Georgia, serif; font-size: 18px; font-weight: 500; color: #ffffff; letter-spacing: 1px;">
