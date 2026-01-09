@@ -237,4 +237,4 @@ We're happy to help you get set up or create new skills for your work!
 
 ---
 
-*Private repository for VPVR team members | Last updated: January 2026*
+*Last updated: January 2026*
