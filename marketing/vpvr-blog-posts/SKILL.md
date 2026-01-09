@@ -261,6 +261,188 @@ A: [Answer that naturally leads to VPVR]
 
 ---
 
+## Blog Post Image Strategy
+
+### Image Requirements (Travel/VR Industry Standard)
+
+| Metric | Requirement |
+|--------|-------------|
+| **Images per 1000 words** | 5-7 images (higher than general blogs) |
+| **Minimum frequency** | 1 image every 350-500 words |
+| **Max text block** | No more than 500 words without a visual break |
+| **File size** | Under 200KB (under 100KB for mobile) |
+| **Format** | WebP preferred, JPEG fallback |
+
+### Image Placement Map
+
+```
+BLOG POST STRUCTURE WITH IMAGES:
+
+┌─────────────────────────────────────┐
+│ 🖼️ FEATURED IMAGE (Hero)           │  ← Required: Above the fold
+│    - Property exterior or activity  │
+│    - 1200×630px (social sharing)    │
+└─────────────────────────────────────┘
+         ↓
+┌─────────────────────────────────────┐
+│ ## H1: Title                        │
+│ [Intro paragraph - 100 words]       │
+│                                     │
+│ 🖼️ CONTEXT IMAGE                   │  ← After intro, sets the scene
+│    - Location shot or activity      │
+└─────────────────────────────────────┘
+         ↓
+┌─────────────────────────────────────┐
+│ ## H2: First Question               │
+│ [Snippet answer - 40-60 words]      │
+│                                     │
+│ 🖼️ SUPPORTING IMAGE                │  ← After snippet answer (not before!)
+│    - Illustrates the answer         │
+│                                     │
+│ [Expanded content...]               │
+└─────────────────────────────────────┘
+         ↓
+┌─────────────────────────────────────┐
+│ ## H2: List Section                 │
+│ 1. Item one                         │
+│ 2. Item two                         │
+│                                     │
+│ 🖼️ GALLERY or COLLAGE              │  ← After list, shows examples
+│    - Multiple items from the list   │
+└─────────────────────────────────────┘
+         ↓
+┌─────────────────────────────────────┐
+│ ## H2: Comparison/Table Section     │
+│ | Col 1 | Col 2 | Col 3 |          │
+│                                     │
+│ 🖼️ INFOGRAPHIC or CHART            │  ← Visualize the data
+│    - Comparison graphic             │
+└─────────────────────────────────────┘
+         ↓
+┌─────────────────────────────────────┐
+│ ## H2: Where to Stay (CTA)          │
+│ [Property recommendations]          │
+│                                     │
+│ 🖼️ PROPERTY IMAGE                  │  ← Specific property photo
+│    - Pool, dock, or hero shot       │
+└─────────────────────────────────────┘
+```
+
+### Image Types by Section
+
+| Section | Image Type | Source | Example |
+|---------|------------|--------|---------|
+| **Featured/Hero** | Property or activity | VPVR website | Pool at sunset |
+| **After Intro** | Location/scene setter | Stock or VPVR | Florida Keys aerial |
+| **After H2 answers** | Supporting visual | Stock, VPVR, or AI | Activity being described |
+| **Lists/Steps** | Gallery or numbered | Collage of items | "Top 5" grid |
+| **Comparisons** | Infographic/chart | AI-generated | Side-by-side visual |
+| **Property CTA** | Property photo | VPVR website only | Specific property |
+| **FAQ section** | Optional icon/graphic | AI or stock | Question mark graphic |
+
+### Image SEO Requirements
+
+**File Naming Convention:**
+```
+✅ CORRECT: marathon-fl-sunset-fishing-dock.webp
+✅ CORRECT: blue-pearl-pool-aerial-view.webp
+❌ WRONG: IMG_2847.jpg
+❌ WRONG: screenshot-2024.png
+```
+
+**Alt Text Formula:**
+```
+[Descriptive subject] + [Location/Context] + [Action/State]
+
+Examples:
+- "Sunset view from private dock at Marathon Florida Keys vacation rental"
+- "Family fishing off 70-foot dock at Blue Pearl property"
+- "Aerial view of heated pool and canal at Emerald Oasis"
+```
+
+**Alt Text Rules:**
+- 125 characters max
+- Include focus keyword naturally (once)
+- Describe what's IN the image
+- Don't start with "Image of..." or "Photo of..."
+
+### AI vs Real Images Guide
+
+| Use AI Images For | Use REAL Photos For |
+|-------------------|---------------------|
+| ✅ Conceptual illustrations | ✅ Property photos (ALWAYS) |
+| ✅ Seasonal/holiday graphics | ✅ Local attractions |
+| ✅ Infographics/charts | ✅ Staff/team photos |
+| ✅ Generic activity scenes | ✅ Guest experiences |
+| ✅ Map illustrations | ✅ Restaurant/business photos |
+
+**AI Image Note**: Google does NOT penalize AI images that add genuine value. Use **gemini-images** skill for AI prompts.
+
+### Image Output Format (Add to Blog Template)
+
+```markdown
+# IMAGE PLAN
+
+## Featured Image
+- **Source**: [VPVR property / Stock / AI-generated]
+- **Subject**: [What the image shows]
+- **File name**: [keyword-rich-file-name.webp]
+- **Alt text**: [Descriptive alt text under 125 chars]
+- **Dimensions**: 1200×630px (social optimized)
+
+## In-Content Images
+
+### Image 1 (After Intro)
+- **Placement**: After introduction paragraph
+- **Source**: [Source]
+- **Subject**: [Scene-setting image description]
+- **Alt text**: [Alt text]
+- **Gemini prompt**: [If AI - use gemini-images skill format]
+
+### Image 2 (After H2: [Section Name])
+- **Placement**: After snippet answer, before expanded content
+- **Source**: [Source]
+- **Subject**: [What it illustrates]
+- **Alt text**: [Alt text]
+
+### Image 3 (List Section)
+- **Placement**: After numbered/bulleted list
+- **Type**: Gallery/Collage showing list items
+- **Alt text**: [Alt text describing the collection]
+
+[Continue for 5-7 total images]
+
+## Property Image (CTA Section)
+- **Property**: [Property name from lookup table]
+- **Fetch from**: https://paraisovacationrentals.com/property/[slug]/
+- **Feature to highlight**: [Pool/Dock/View relevant to article]
+- **Alt text**: [Property-specific alt text]
+```
+
+### Mobile Image Optimization
+
+```html
+<!-- Responsive image template -->
+<picture>
+  <source srcset="image-800w.webp 800w,
+                  image-480w.webp 480w,
+                  image-320w.webp 320w"
+          type="image/webp">
+  <img src="image-800w.jpg"
+       alt="[Descriptive alt text]"
+       width="800" height="450"
+       loading="lazy">
+</picture>
+```
+
+**Mobile Rules:**
+- Always set explicit width/height (prevents layout shift)
+- Use `loading="lazy"` for below-fold images
+- Hero image should NOT be lazy-loaded
+- Test with Google PageSpeed Insights
+
+---
+
 ## Featured Snippet Templates
 
 ### Paragraph Snippet (Definition/Explanation)
