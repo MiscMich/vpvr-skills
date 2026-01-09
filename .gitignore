@@ -1,0 +1,14 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude cache
+.claude/
+
+# Skill packages (use extracted folders instead)
+*.skill
+
+# Temp files
+extracted_skill/
+*.tmp
+*.bak
