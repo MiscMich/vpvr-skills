@@ -15,7 +15,7 @@ Central hub for Villa Paraiso Vacation Rentals Claude AI skills.
 ### Claude Code (Terminal)
 
 ```bash
-git clone git@github.com:YOUR_USERNAME/vpvr-skills.git ~/.claude/skills/vpvr
+git clone git@github.com:MiscMich/vpvr-skills.git ~/.claude/skills/vpvr
 ```
 
 ---
@@ -29,10 +29,10 @@ git clone git@github.com:YOUR_USERNAME/vpvr-skills.git ~/.claude/skills/vpvr
 
 ### Skill URLs (for Claude.ai)
 
-Replace `YOUR_USERNAME` with the GitHub username:
+Replace `MiscMich` with the GitHub username:
 
-- **Brand Guidelines**: `https://raw.githubusercontent.com/YOUR_USERNAME/vpvr-skills/main/marketing/vpvr-brand/SKILL.md`
-- **Skill Creator**: `https://raw.githubusercontent.com/YOUR_USERNAME/vpvr-skills/main/skill-from-masters/SKILL.md`
+- **Brand Guidelines**: `https://raw.githubusercontent.com/MiscMich/vpvr-skills/main/marketing/vpvr-brand/SKILL.md`
+- **Skill Creator**: `https://raw.githubusercontent.com/MiscMich/vpvr-skills/main/skill-from-masters/SKILL.md`
 
 ---
 
