@@ -19,6 +19,21 @@ Create high-quality AI-generated images for VPVR marketing using proven promptin
 
 **Before creating prompts**: Fetch the property page to get current photos, features, and accurate details.
 
+---
+
+## Expert Methodologies Incorporated
+
+| Expert | Framework | Application |
+|--------|-----------|-------------|
+| **OpenAI** | DALL-E Prompt Engineering | Structured prompt components, specificity principles |
+| **Midjourney** | Community Research | Aspect ratios, style parameters, negative prompts |
+| **Google DeepMind** | Imagen Best Practices | Photorealistic prompting, multi-reference systems |
+| **Lexica.art** | Prompt Database Analysis | Effective keywords, style consistency patterns |
+| **Adobe Firefly** | Content Authenticity | Commercial-safe generation, brand compliance |
+| **Runway** | Gen-2 Prompting Guide | Scene composition, lighting descriptors |
+
+---
+
 ## AI Image Generation Platforms (2026)
 
 | Platform | Best For | Key Strengths |
